@@ -30,7 +30,8 @@ public class CameraGolf : CameraManager {
 		float distance = Vector3.Distance(newpos, ball.transform.position);
 
 		if (distance > maxDistanceFromBall)
-			newpos = Vector3.MoveTowards(newpos, ball.transform.position, distance * lookupSpeed * Time.deltaTime);
+			newpos = Vector3.MoveTowards(newpos, ball.transform.position,
+				Mathf.Min(distance * lookupSpeed * Time.deltaTime, distance - maxDistanceFromBall));
 		else {
 			if (transform.position.y - maxHeightFromBall > ball.transform.position.y)
 				newpos.y = ball.transform.position.y + maxHeightFromBall;

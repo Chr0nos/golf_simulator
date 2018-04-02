@@ -378,13 +378,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   runSpeed: 3
-  maxHeight: 20
+  maxHeight: 50
   freeCam: 1
   terrain: {fileID: 1648722148}
   ball: {fileID: 1228029643}
   lookupSpeed: 2
   maxHeightFromBall: 3
-  maxDistanceFromBall: 5
+  maxDistanceFromBall: 10
   angularSpeed: 45
 --- !u!1001 &245168377
 Prefab:
@@ -591,8 +591,8 @@ Rigidbody:
   m_GameObject: {fileID: 1228029640}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 1
-  m_AngularDrag: 0.05
+  m_Drag: 0.05
+  m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -604,7 +604,7 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1228029640}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6d2731e1487804145a4b8888b6138132, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -621,6 +621,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2c761bbaedb44939d33d370e846311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 149616936}
+  maxForce: 180
+  forceDelta: 50
+  shootHeight: 0.5
+  currentForce: 0
 --- !u!1 &1402856167
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +749,7 @@ TerrainCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1648722146}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 80ca6b9fc672b4a2e948d8b3d37af90e, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: a2996e6e86aa44d8ea6bc9e9481ce30e, type: 2}
   m_EnableTreeColliders: 1
