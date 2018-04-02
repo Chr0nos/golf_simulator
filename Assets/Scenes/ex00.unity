@@ -378,9 +378,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   runSpeed: 3
-  maxHeight: 180
+  maxHeight: 20
+  freeCam: 1
   terrain: {fileID: 1648722148}
   ball: {fileID: 1228029643}
+  lookupSpeed: 2
+  maxHeightFromBall: 3
+  maxDistanceFromBall: 5
+  angularSpeed: 45
 --- !u!1001 &245168377
 Prefab:
   m_ObjectHideFlags: 0

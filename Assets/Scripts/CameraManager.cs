@@ -55,17 +55,32 @@ public class CameraManager : MonoBehaviour {
 
 	private void MoveTranslate(Vector3 motion)
 	{
+		bool	error = false;
+		Vector3	newpos;
+
 		if (motion == Vector3.zero)
 			return ;
 		motion = transform.rotation * motion;
 		motion *= speed;
 		if (Input.GetAxis("Run") > 0)
 			motion *= runSpeed;
-		Vector3 pos = transform.position + motion;
-		float height = terrain.SampleHeight(transform.position + motion) + 2;
+		newpos = MoveAboveTerrain(transform.position + motion, ref error);
+		if (!error)
+			transform.position = newpos;
+	}
 
-		pos.y = Mathf.Clamp(pos.y, height, maxHeight);
-		transform.position = pos;
+	protected Vector3 MoveAboveTerrain(Vector3 destination, ref bool error)
+	{
+		float height = terrain.SampleHeight(destination) + 2;
+
+		if (height < maxHeight)
+		{
+			destination.y = Mathf.Clamp(destination.y, height, maxHeight);
+			error = false;
+		}
+		else
+			error = true;
+		return (destination);
 	}
 
 	virtual public void OnUpdate()
