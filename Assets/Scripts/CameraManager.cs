@@ -9,13 +9,19 @@ public class CameraManager : MonoBehaviour {
 	public bool					freeCam = true;
 	public Terrain				terrain;
 	private Vector3				lastMousePosition;
-	public static CameraManager	instance;
+	public static CameraManager	instance = null;
 
 	// Use this for initialization
 	void Start () {
 		lastMousePosition = Vector3.zero;
 	}
-	
+
+	private void Awake()
+	{
+		if (instance == null)
+			instance = this;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		OnUpdate();
