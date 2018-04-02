@@ -721,7 +721,7 @@ Rigidbody:
   m_GameObject: {fileID: 1228029640}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.05
+  m_Drag: 0.2
   m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -753,6 +753,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: {fileID: 1931984066}
   camera: {fileID: 149616936}
+  terrain: {fileID: 1648722148}
+  crappySpace: 1
   maxForce: 60
   forceDelta: 35
   shootHeight: 0.5
